@@ -115,8 +115,8 @@ namespace Cargoscan
                 try
                 {
 
-                    flOkscan = true;//flOkscan | DimScanner.Scan(ref rscan);
-                    flOkscan = true;//flOkscan | WeightScanner.Scan(ref rscan);
+                    flOkscan = flOkscan | DimScanner.Scan(ref rscan);
+                    flOkscan = flOkscan | WeightScanner.Scan(ref rscan);
                     if (flOkscan)
                     {
                         System.Messaging.Message ordermsg = new System.Messaging.Message();
@@ -133,11 +133,11 @@ namespace Cargoscan
                         // NOTE: ensure the nmsprovider-activemq.config file exists in the executable folder.
                         IConnectionFactory factory = new NMSConnectionFactory("activemq:tcp://localhost:61616?wireFormat.tightEncodingEnabled=true");
 
-                        //factory.ConnectionFactory.UserName = "karaf";
+                     
 
-                        ((Apache.NMS.ActiveMQ.ConnectionFactory)((Apache.NMS.NMSConnectionFactory)factory).ConnectionFactory).UserName = StartProgram.userNameMq;
-                        ((Apache.NMS.ActiveMQ.ConnectionFactory)((Apache.NMS.NMSConnectionFactory)factory).ConnectionFactory).Password = StartProgram.passwordMq;
-                        using (IConnection connection = factory.CreateConnection())
+                       /* ((Apache.NMS.ActiveMQ.ConnectionFactory)((Apache.NMS.NMSConnectionFactory)factory).ConnectionFactory).UserName = StartProgram.userNameMq;
+                        ((Apache.NMS.ActiveMQ.ConnectionFactory)((Apache.NMS.NMSConnectionFactory)factory).ConnectionFactory).Password = StartProgram.passwordMq;*/
+                        using (IConnection connection = factory.CreateConnection(StartProgram.userNameMq, StartProgram.passwordMq))
                            
                         using (ISession session = connection.CreateSession())
                         {
@@ -175,10 +175,10 @@ namespace Cargoscan
                         MessageQueue Queue = new MessageQueue(StartProgram.queueName);
                         Queue.Send(ordermsg);*/
 
-                       /* Weight.Text = rscan.Weight.ToString();
+                        Weight.Text = rscan.Weight.ToString();
                         DimX.Text   = rscan.Length.ToString();
                         DimY.Text   = rscan.Width.ToString();
-                        DimZ.Text   = rscan.Height.ToString();*/
+                        DimZ.Text   = rscan.Height.ToString();
                     }
                     else
                     {
