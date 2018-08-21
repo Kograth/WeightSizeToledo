@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Cargoscan.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PortDimensionScaner" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">COM2</Value>
+    </Setting>
+    <Setting Name="PortWeighr" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">COM1</Value>
+    </Setting>
+    <Setting Name="newLine" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CHR(13)</Value>
+    </Setting>
+    <Setting Name="PortBarcodeScanner" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">COM5</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
