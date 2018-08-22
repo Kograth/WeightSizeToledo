@@ -122,16 +122,22 @@ namespace Cargoscan
                         System.Messaging.Message ordermsg = new System.Messaging.Message();
                         ordermsg.Formatter = new XmlMessageFormatter(new Type[] { typeof(string) });
 
+                        //test only
+                        /*rscan.Height = 12.3;
+                        rscan.Length = 10.3;
+                        rscan.Weight = 9.3;
+                        rscan.Width  = 7.2;*/
+
+
                         JavaScriptSerializer serializer = new JavaScriptSerializer();
-                        string json = "Mother anarchy, father the glass of port wine...";//serializer.Serialize(rscan);
+                        string json = serializer.Serialize(rscan);
 
-
-                        Uri connecturi = new Uri("activemq:tcp://localhost:61616");
+                        //Uri connecturi = new Uri("activemq:tcp://localhost:61616");
 
                         //Console.WriteLine("About to connect to " + connecturi);
 
                         // NOTE: ensure the nmsprovider-activemq.config file exists in the executable folder.
-                        IConnectionFactory factory = new NMSConnectionFactory("activemq:tcp://localhost:61616?wireFormat.tightEncodingEnabled=true");
+                        IConnectionFactory factory = new NMSConnectionFactory("activemq:tcp://10.0.1.39:61616?wireFormat.tightEncodingEnabled=true");
 
                      
 
