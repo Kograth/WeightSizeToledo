@@ -168,6 +168,7 @@
             this.checkBox1.TabIndex = 6;
             this.checkBox1.Text = "Кубискан";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Visible = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged_1);
             // 
             // label1
@@ -179,6 +180,7 @@
             this.label1.Size = new System.Drawing.Size(167, 13);
             this.label1.TabIndex = 8;
             this.label1.Text = "При использовании кубискана:";
+            this.label1.Visible = false;
             // 
             // label2
             // 
@@ -189,6 +191,7 @@
             this.label2.Size = new System.Drawing.Size(181, 13);
             this.label2.TabIndex = 9;
             this.label2.Text = "1. Нажми \"Measure\" на Кубискане";
+            this.label2.Visible = false;
             // 
             // label3
             // 
@@ -199,6 +202,7 @@
             this.label3.Size = new System.Drawing.Size(157, 13);
             this.label3.TabIndex = 10;
             this.label3.Text = "2. Отсканируй груз сканером";
+            this.label3.Visible = false;
             // 
             // MainForm
             // 

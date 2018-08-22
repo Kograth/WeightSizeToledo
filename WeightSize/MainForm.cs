@@ -48,7 +48,7 @@ namespace Cargoscan
             DimScanner = new DimensionScaner();
             WeightScanner = new WeightMeasure();
             DoMeizure = new CubiscanWeightScan();
-            checkBox1.Checked = true;
+            checkBox1.Checked = false;
 
 
             // ЛОГИРОВАНИЕ ПОД ApacheMQ
