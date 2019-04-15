@@ -48,7 +48,7 @@ namespace Cargoscan
             DimScanner = new DimensionScaner();
             WeightScanner = new WeightMeasure();
             DoMeizure = new CubiscanWeightScan();
-            checkBox1.Checked = false;
+            checkBox1.Checked = true;
 
 
             // ЛОГИРОВАНИЕ ПОД ApacheMQ
@@ -67,8 +67,9 @@ namespace Cargoscan
                     throw new Exception(Resurses.ErrorQueue);
                 }*/
                 
-                BrcScanner.Open(Settings.Default.PortBarcodeScanner, 9600, 8); 
-
+                BrcScanner.Open(Settings.Default.PortBarcodeScanner, 9600, 8);
+                DimScanner.Open(Settings.Default.PortDimensionScaner, 9600, 8);
+                WeightScanner.Open(Settings.Default.PortWeighr, 9600, 8);
             }
             catch (Exception error)
             {
@@ -128,6 +129,7 @@ namespace Cargoscan
                         rscan.Weight = 9.3;
                         rscan.Width  = 7.2;*/
 
+                        rscan.MeasureCreater = "65e29293-f4e2-11e5-85c0-005056b649b2";
 
                         JavaScriptSerializer serializer = new JavaScriptSerializer();
                         string json = serializer.Serialize(rscan);

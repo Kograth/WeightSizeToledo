@@ -12,6 +12,7 @@ namespace Cargoscan
         private double l_length;
         private double l_width;
         private double l_height;
+        private string l_MeasureCreater;
 
      //   [DataMember]
         public string Barcode
@@ -20,7 +21,13 @@ namespace Cargoscan
             set { l_barcode = value; }
         }
 
-       // [DataMember]
+        public string MeasureCreater
+        {
+            get { return l_MeasureCreater; }
+            set { l_MeasureCreater = value; }
+        }
+
+        // [DataMember]
         public double Weight
         {
             get { return l_weight; }
@@ -49,7 +56,7 @@ namespace Cargoscan
         }
          public override  string ToString()
          {
-             return "Barcode:" + l_barcode + " Weight: " + l_weight+" Dimensions: " + l_length + " X " + l_width + " X " + l_height;
+             return "Barcode:" + l_barcode + " Weight: " + l_weight+" Dimensions: " + l_length + " X " + l_width + " X " + l_height + "MeasureCreater "+ l_MeasureCreater;
          }
 
     }
